@@ -10,7 +10,9 @@ var specialChars = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 //FUNCTION DECLARATION
 //Unary plus (+) converts a string into a value
 function generatePassword() {
-  var passwordLength = +prompt("How long do you want your password to be?");
+  var passwordLength = +prompt(
+    "How long do you want your password to be? (Enter a value between 8 and 128)"
+  );
   var lowercaseChoice = confirm(
     "Do you want to include lowercase characters in your password?"
   );
@@ -26,7 +28,7 @@ function generatePassword() {
 
   var selectedChars = "";
 
-  //Addition assignment (+=) operator adds the value of the right operand to a variable and assigns the results to a variable
+  //Addition assignment (+=) operator adds the value of the right operand to a variable and assigns the results to the variable on the left
   if (lowercaseChoice) {
     selectedChars += lowercase;
   } else if (uppercaseChoice) {
