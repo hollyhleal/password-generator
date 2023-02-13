@@ -29,13 +29,20 @@ function generatePassword() {
   var selectedChars = "";
 
   //Addition assignment (+=) operator adds the value of the right operand to a variable and assigns the results to the variable on the left
+  // if (!passwordLength >= 8 && passwordLength <= 128) {
+  //   alert("Please enter a valid password length between 8 and 128 characters.");
+  // }
+
   if (lowercaseChoice) {
     selectedChars += lowercase;
-  } else if (uppercaseChoice) {
+  }
+  if (uppercaseChoice) {
     selectedChars += uppercase;
-  } else if (numericChoice) {
+  }
+  if (numericChoice) {
     selectedChars += numeric;
-  } else if (specialCharsChoice) {
+  }
+  if (specialCharsChoice) {
     selectedChars += specialChars;
   }
 
