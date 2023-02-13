@@ -40,12 +40,22 @@ function generatePassword() {
   }
 
   //after the if statements, hypothetically
-  selectedChars = selectedChars.split();
+  // selectedChars = selectedChars.split();
+  var randomChars = [];
   password = "";
-  for (i = 0; i < passwordLength; i++) {
-    password += selectedChars[Math.floor(Math.random() * selectedChars)];
-  }
+  //   for (i = 0; i < passwordLength; i++) {
+  //     password += selectedChars[Math.floor(Math.random() * selectedChars)];
+  //   }
 
+  //   return password;
+  // }
+  for (i = 0; i < passwordLength; i++) {
+    randomChars[i] =
+      selectedChars[Math.floor(Math.random() * selectedChars.length)];
+
+    password += randomChars[i];
+  }
+  randomChars = [];
   return password;
 }
 
