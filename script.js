@@ -10,12 +10,20 @@ var specialChars = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 //FUNCTION DECLARATION
 //Unary plus (+) converts a string into a value
 function generatePassword() {
-  var passwordLength = +prompt(
-    "How long do you want your password to be? (Enter a value between 8 and 128)"
+  var passwordLength = parseInt(
+    prompt(
+      "How long do you want your password to be? (Enter a value between 8 and 128)"
+    )
   );
-  // if (!passwordLength >= 8 && passwordLength <= 128) {
-  //   alert("Please enter a valid password length between 8 and 128 characters.");
-  // }
+  console.log(typeof passwordLength);
+  if (passwordLength < 8) {
+    alert("Please enter a valid password length 8 characters or greater.");
+    return null;
+  }
+  if (passwordLength > 128) {
+    alert("Please enter a valid password length less than 128 characters.");
+    return null;
+  }
   var lowercaseChoice = confirm(
     "Do you want to include lowercase characters in your password?"
   );
