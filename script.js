@@ -42,7 +42,7 @@ function generatePassword() {
   //after the if statements, hypothetically
   selectedChars = selectedChars.split();
   password = "";
-  for (i = 0; i < passwordLength.length; i++) {
+  for (i = 0; i < passwordLength; i++) {
     password += selectedChars[Math.floor(Math.random() * selectedChars)];
   }
 
