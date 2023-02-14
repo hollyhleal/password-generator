@@ -15,6 +15,7 @@ function generatePassword() {
       "How long do you want your password to be? (Enter a value between 8 and 128)"
     )
   );
+  //return null; will exit the function if the user has not selected a valid password length
   console.log(typeof passwordLength);
   if (passwordLength < 8) {
     alert("Please enter a valid password length 8 characters or greater.");
@@ -40,9 +41,6 @@ function generatePassword() {
   var selectedChars = "";
 
   //Addition assignment (+=) operator adds the value of the right operand to a variable and assigns the results to the variable on the left
-  // if (!passwordLength >= 8 && passwordLength <= 128) {
-  //   alert("Please enter a valid password length between 8 and 128 characters.");
-  // }
 
   if (lowercaseChoice) {
     selectedChars += lowercase;
@@ -57,16 +55,8 @@ function generatePassword() {
     selectedChars += specialChars;
   }
 
-  //after the if statements, hypothetically
-  // selectedChars = selectedChars.split();
   var randomChars = [];
   password = "";
-  //   for (i = 0; i < passwordLength; i++) {
-  //     password += selectedChars[Math.floor(Math.random() * selectedChars)];
-  //   }
-
-  //   return password;
-  // }
   for (i = 0; i < passwordLength; i++) {
     randomChars[i] =
       selectedChars[Math.floor(Math.random() * selectedChars.length)];
